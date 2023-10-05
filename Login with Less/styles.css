@@ -7,36 +7,39 @@ body {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
-  /* Centra horizontalmente el contenido */
   align-items: center;
   height: 100vh;
 }
+
 body h1 {
   text-align: center;
   color: white;
 }
-/* Estilos para el formulario de inicio de sesión */
+
 #login-form {
   max-width: 300px;
   padding: 20px;
   background-color: blue;
   border: 1px solid #ccc;
   box-sizing: border-box;
-  /* Asegura que el ancho incluye el relleno y el borde */
 }
+
 .form-group {
   margin-bottom: 15px;
 }
+
 label {
   color: #ffffff;
   font-weight: bold;
 }
+
 input[type="text"],
 input[type="password"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
 }
+
 button[type="submit"] {
   background-color: #3498db;
   color: #fff;
@@ -44,7 +47,5 @@ button[type="submit"] {
   border: none;
   cursor: pointer;
   margin: 0 auto;
-  /* Centra horizontalmente el botón dentro del contenedor */
   display: block;
-  /* Convierte el botón en un bloque para aplicar el margen automático */
 }
