@@ -1,0 +1,57 @@
+/* login.less */
+
+// Variables para colores y tamaños
+@primary-color: #3498db;
+@text-color: #ffffff;
+@input-bg-color: #f2f2f2;
+@input-border-color: #ccc;
+
+/* Estilos para el body */
+body {
+  background-color: purple;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; 
+  height: 100vh; 
+  h1 {
+    text-align: center;
+    color: white; 
+  }
+}
+
+#login-form {
+  max-width: 300px;
+  padding: 20px;
+  background-color: blue;
+  border: 1px solid @input-border-color;
+  box-sizing: border-box; 
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  color: @text-color;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid @input-border-color;
+}
+
+button[type="submit"] {
+  background-color: @primary-color;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin: 0 auto; 
+  display: block; 
+}
