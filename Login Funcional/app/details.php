@@ -8,7 +8,7 @@ if(isset($_SESSION['user_id'])){
 include "app/ProductsController.php";
 $productsController = new ProductsController();
 
-$products = $productsController->getProducts();
+$main_product = $productsController->getProductsBySlug($_GET['slug']);
 ?>
 
 <!DOCTYPE html>
@@ -153,23 +153,68 @@ $products = $productsController->getProducts();
 									<h1>
 										Contenido
 									</h1>
-									<?php foreach ($products as $product): ?>
-									<div class="card col-3 m-2" >
-								<img class="card-img-top" src="<?=$product->cover ?>" alt="Card image cap">
-								<div class="card-body">
-									<h5 class="card-title">
-										<?= $product->name?>
-									</h5>
-									<p class="card-text">
-										<?= $product->description?>
-									</p>
-									<a href="details.php?slug=<?$product?>" class="btn btn-primary">
-										Go somewhere</a>
-								</div>
-								</div>
+								
+                                <div class="row">
 
-								<?php endforeach; ?>
-									
+                                <div class="card">
+                                <div class="card-header">
+                                    Featured
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-4">
+
+                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                        <img class="d-block w-100" src="<? $main_product->cover?>" alt="First slide">
+                                        </div>
+                                       
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                    </div>
+
+                                        </div>
+                                        <div class="col">
+                                        <h5 class="card-title">
+                                            <? $main_product->name?>
+                                        </h5>
+                                         <p class="card-text">
+                                            <? $main_product->description?>
+                                          </p>
+                                          <p class="card-text">
+                                            <? $main_product->features?>
+                                          </p>
+
+                                          <span class="badge badge-pill badge-secondary"><? $main_product->brand->name?></span>
+
+                                          <?php foreach($main_product->tags as tag): ?>
+
+                                            
+                                         
+                                          <span class="badge badge-pill badge-success">
+                                            <? $tag->name?>
+                                           
+                                          </span>
+                                            <?php endforeach;?>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+
+                                </div>
+
 									
 								</div>
 
